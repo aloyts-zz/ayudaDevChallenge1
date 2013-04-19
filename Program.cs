@@ -21,7 +21,7 @@ namespace ayudaDevChallenge1
              * A little sore.
              * 
              * I'm sure there is an elegant solution to all this and had I even know what this whole "ass-key" thing
-             * was before jumping in, I may have realized that the cypher flips the first byte between lower-and upper-case letters
+             * was before jumping in, I may have realized that the cipher flips the first byte between lower-and upper-case letters
              * as defined in the standard. Below is the original mapping from the handy encryption tester they provide.
              *            
              * 6B 68 69 6E 6F 6C 6D 62 63 60 61 66 67 64 65 7A 7B 78 79 7E 7F 7C 7D 72 73 70
@@ -35,7 +35,7 @@ namespace ayudaDevChallenge1
              * "There is nothing so useless as doing well that which should not be done at all."
              * 
              * First, I needed to get a mapping of characters and relate them to their encrypted version.  I fed in the alphabet
-             * and got my cypher string. The delimiter is useful to quickly create arrays with the results.
+             * and got my cipher string. The delimiter is useful to quickly create arrays with the results.
              * 
              * Being Québécois, I should have known that Ayuda would not have left it there but used accents and 
              * other tricks to screw me. Quebec turned out to be correlation and not causation as I later discovered. I now blame for this trickery
@@ -59,7 +59,7 @@ namespace ayudaDevChallenge1
              * was screwing me and my desire to figure it out was exceeded by my lack of patience. 
              * It'll be hard enought to remember to replace this with \r\n 
              * 
-             * I went through the cypher and X was never used so I thought it safe. 
+             * I went through the cipher and X was never used so I thought it safe. 
              * Typically, when looking for good delimiters for array creation,
              * I'll use something like ALT-0169 which is: ©. 
              *      
@@ -111,7 +111,7 @@ namespace ayudaDevChallenge1
                  * replacement based on seed order. Take the case of "...6460..." 
                  * The entities might be 64 and 60 but searching for 
                  * 46 meets the condition and causes an incorrect decryption at best, gibberish at worst.
-                 * Sadly, running the cypher through replace  
+                 * Sadly, running the cipher through replace  
                  * yields enough content to do a search and get the answer for the laziest among us. 
                  * It's how I confirmed I'd need to use accented characters in my key.
                  * But it's not a solution and is inelegant to say nothing of wholesale cheating.
@@ -127,8 +127,8 @@ namespace ayudaDevChallenge1
              */
 
             int intMsgLen = strMsg.Length;
-            int cyLoop = 0; //cypher looper
-            int cyLookup = 0; //cypher lookup looper
+            int cyLoop = 0; //cipher looper
+            int cyLookup = 0; //cipher lookup looper
             //lookup and replace encrypted entities with their decrypted equivalents.
 
             string strDecrypted = ""; // results containter for the loop below.
